@@ -6,6 +6,6 @@ import com.example.rabbitmqproducer.entity.SaleAdvertisement;
 import java.util.List;
 
 public interface SaleAdvertisementService {
-    SaleAdvertisementDTO createSaleAdvertisement(SaleAdvertisementDTO saleAdvertisementDTO);
+    String createSaleAdvertisement(SaleAdvertisementDTO saleAdvertisementDTO);
     List<SaleAdvertisement> getAll();
 }

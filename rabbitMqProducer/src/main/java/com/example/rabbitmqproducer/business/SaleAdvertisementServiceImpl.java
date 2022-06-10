@@ -28,7 +28,7 @@ public class SaleAdvertisementServiceImpl implements SaleAdvertisementService{
     }
 
     @Override
-    public SaleAdvertisementDTO createSaleAdvertisement(SaleAdvertisementDTO saleAdvertisementDTO) {
+    public String createSaleAdvertisement(SaleAdvertisementDTO saleAdvertisementDTO) {
         User user = User.builder()
                 .username(saleAdvertisementDTO.getUsername())
                 .email(saleAdvertisementDTO.getEmail())
@@ -44,7 +44,7 @@ public class SaleAdvertisementServiceImpl implements SaleAdvertisementService{
 
         rabbitTemplate.convertAndSend(queue.getName(), saleAdvertisementDTO);
 
-        return saleAdvertisementDTO;
+        return "";
     }
 
     @Override
